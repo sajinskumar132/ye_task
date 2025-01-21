@@ -1,1 +1,1 @@
-# Student Mnagement staystem
+# Student Mnagement system
