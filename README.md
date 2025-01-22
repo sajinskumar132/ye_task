@@ -264,6 +264,74 @@ Before running the application, ensure you have the following installed:
 }
 ```
 
+### Get tasks
+
+**GET** `/api/V0/tasks/get_tasks`
+
+**Response:**
+
+```json
+[
+  {
+    "_id": "679001fe041d5d57472ef60e",
+    "task_name": "sample tasks 2",
+    "task_description": "sample task description",
+    "task_due_date_time": "10-02-2022T10:50:42.389Z",
+    "task_created_user": {
+      "_id": "678ffc8bfe1e02fdff64e7f9",
+      "user_name": "admin_1"
+    },
+    "assign_user": {
+      "_id": "678ffc92fe1e02fdff64e7fd",
+      "user_name": "student_1"
+    },
+    "status": null,
+    "createdAt": "2025-01-21T20:22:22.680Z",
+    "updatedAt": "2025-01-21T20:22:22.680Z",
+    "__v": 0
+  }
+]
+```
+
+### Create new task
+
+**POST** `/api/V0/tasks/create_new_task`
+
+**Request:**
+
+```json
+{
+    "task_name":"sample tasks 3", 
+    "task_description":"sample task description", 
+    "task_due_date_time":"10-02-2022T10:50:42.389Z", 
+    "assign_user":"678ffc92fe1e02fdff64e7fd", 
+    "status":"678fc5ad245b802d74424ff0"
+}
+```
+
+### Update task status
+
+**PUT** `/api/V0/tasks/[task_id]/update_task_status`
+
+**Request:**
+
+```json
+{
+    "status":"678fe918588e3286b009ee6f"
+}
+```
+
+### Delete task
+
+**PUT** `/api/V0/tasks/[task_id]/delete_task`
+
+**Request:**
+
+```json
+{
+    "message":"SuccessFully deleted task"
+}
+```
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
