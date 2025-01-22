@@ -59,7 +59,7 @@ Before running the application, ensure you have the following installed:
 
 ## API Endpoints
 
-### Create all status
+### Get all status
 
 **GET** `/api/V0/status/get_all_status`
 
@@ -79,16 +79,53 @@ Before running the application, ensure you have the following installed:
 
 **GET** `/api/V0/status/create_new_status`
 
-**Response:**
+**Request:**
 
 ```json
 {
-    "status_name":"InActive"
+  "status_name": "InActive"
 }
 ```
 
+### Get all roles
 
+**GET** `/api/V0/roles/get_all_roles`
 
+**Response:**
+
+```json
+[
+  {
+    "_id": "678fcb0b0b6dd97e6c9f7cd2",
+    "role_name": "Admin",
+    "role_status": "678fc5ad245b802d74424ff0",
+    "createdAt": "2025-01-21T16:27:55.275Z",
+    "updatedAt": "2025-01-21T16:27:55.275Z",
+    "__v": 0
+  },
+  {
+    "_id": "678fcb6d0e615e021ca73a81",
+    "role_name": "Student",
+    "role_status": "678fc5ad245b802d74424ff0",
+    "createdAt": "2025-01-21T16:29:33.774Z",
+    "updatedAt": "2025-01-21T16:29:33.774Z",
+    "__v": 0
+  }
+]
+```
+
+### Create new role
+
+**GET** `/api/V0/roles/create_new_role`
+
+**Request:**
+
+```json
+{
+  "role_name": "Student",
+  "role_status_id": "678fc5ad245b802d74424ff0"
+}
+```
 
 ## License
 
