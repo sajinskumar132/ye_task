@@ -1,6 +1,15 @@
+interface taskValidationData{
+    task_name:string|null,
+    task_description:string|null,
+    task_created_user:string|null,
+    task_due_date_time:string|null,
+    assign_user:string|null,
+    status:string|null,
+}
+
 export class TaskServices{
 
-    static taskValidation(data:any){
+    static taskValidation(data:taskValidationData){
         const errors: string[] = [];
 
         if (!data.task_name) {

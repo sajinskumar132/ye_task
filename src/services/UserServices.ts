@@ -1,5 +1,17 @@
+
+
+interface userValudationData{
+    user_name?:string|null,
+    email_id:string|null,
+    password:string|null,
+    user_status?:string|null,
+    user_role?:string|null,
+    department_name?:string|null,
+}
+
+
 export class UserServices {
-    static userEmailAndPasswordValidation(data: any) {
+    static userEmailAndPasswordValidation(data: userValudationData) {
         const errors: string[] = [];
 
         if (!data.email_id) {
@@ -13,7 +25,7 @@ export class UserServices {
         return errors.length === 0 ? null : errors;
     }
 
-    static userValidations(data: any) {
+    static userValidations(data: userValudationData) {
         const errors: string[] = [];
 
         // Check for user name
