@@ -1,1 +1,1 @@
-# ye_task
+# Student Management system
