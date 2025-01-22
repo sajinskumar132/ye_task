@@ -27,7 +27,7 @@ export const get_tasks: RequestHandler = async (req, res) => {
 
 export const create_new_task: RequestHandler = async (req, res) => {
     try {
-        const { id, role_name } = (req as any).user
+        const { id } = (req as any).user
         const { task_name, task_description, task_due_date_time, assign_user, status } = req.body
         const parameter_validation = TaskServices.taskValidation({ task_name, task_description, task_due_date_time, assign_user, status, task_created_user: id })
         if (parameter_validation) return CommonHelpers.ResponseHandler(res, 400, "Validation errors", parameter_validation)
