@@ -77,7 +77,7 @@ Before running the application, ensure you have the following installed:
 
 ### Create new status
 
-**GET** `/api/V0/status/create_new_status`
+**POST** `/api/V0/status/create_new_status`
 
 **Request:**
 
@@ -116,7 +116,7 @@ Before running the application, ensure you have the following installed:
 
 ### Create new role
 
-**GET** `/api/V0/roles/create_new_role`
+**POST** `/api/V0/roles/create_new_role`
 
 **Request:**
 
@@ -155,13 +155,112 @@ Before running the application, ensure you have the following installed:
 
 ### Create new completion status
 
-**GET** `/api/V0/completion_status/create_new_completion_status`
+**POST** `/api/V0/completion_status/create_new_completion_status`
 
 **Request:**
 
 ```json
 {
   "completion_status_name": "Completed"
+}
+```
+
+### Get all users
+
+**GET** `/api/V0/users/get_all_users`
+
+**Response:**
+
+```json
+[
+  {
+    "_id": "678ffc8bfe1e02fdff64e7f9",
+    "user_name": "admin_1",
+    "email_id": "admin_1@admin.com",
+    "user_role": {
+      "_id": "678fcb0b0b6dd97e6c9f7cd2",
+      "role_name": "Admin"
+    },
+    "user_status": {
+      "_id": "678fc5ad245b802d74424ff0",
+      "status_name": "Active"
+    }
+  },
+  {
+    "_id": "678ffc92fe1e02fdff64e7fd",
+    "user_name": "student_1",
+    "email_id": "student_1@admin.com",
+    "user_role": {
+      "_id": "678fcb6d0e615e021ca73a81",
+      "role_name": "Student"
+    },
+    "user_status": {
+      "_id": "678fc5ad245b802d74424ff0",
+      "status_name": "Active"
+    }
+  }
+]
+```
+
+### Get all students
+
+**GET** `/api/V0/users/get_all_students`
+
+**Response:**
+
+```json
+[
+  {
+    "_id": "678fe608c124176835573191",
+    "user": null,
+    "department_name": "Computer_Science",
+    "createdAt": "2025-01-21T18:23:04.935Z",
+    "updatedAt": "2025-01-21T18:23:04.935Z",
+    "__v": 0
+  },
+  {
+    "_id": "678ffc92fe1e02fdff64e7fe",
+    "user": {
+      "_id": "678ffc92fe1e02fdff64e7fd",
+      "user_name": "student_1",
+      "email_id": "student_1@admin.com",
+      "user_role": "678fcb6d0e615e021ca73a81",
+      "user_status": "678fc5ad245b802d74424ff0"
+    },
+    "department_name": "Computer_Science",
+    "createdAt": "2025-01-21T19:59:14.741Z",
+    "updatedAt": "2025-01-21T19:59:14.741Z",
+    "__v": 0
+  }
+]
+```
+
+### Create new user
+
+**POST** `/api/V0/users/create_new_user`
+
+**Request:**
+
+```json
+{
+  "user_role": "Admin",
+  "user_name": "admin_1",
+  "email_id": "admin_1@admin.com",
+  "password": "admin@123",
+  "user_status": "678fc5ad245b802d74424ff0"
+}
+```
+
+### User login
+
+**POST** `/api/V0/users/user_login`
+
+**Request:**
+
+```json
+{
+  "email_id": "admin_1@admin.com",
+  "password": "admin@123"
 }
 ```
 
