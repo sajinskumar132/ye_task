@@ -127,6 +127,44 @@ Before running the application, ensure you have the following installed:
 }
 ```
 
+### Get all completion status
+
+**GET** `/api/V0/completion_status/get_all_completion_status`
+
+**Response:**
+
+```json
+[
+  {
+    "_id": "678fe918588e3286b009ee6f",
+    "completion_status_name": "Pending",
+    "__v": 0
+  },
+  {
+    "_id": "678fe927588e3286b009ee72",
+    "completion_status_name": "Overdue",
+    "__v": 0
+  },
+  {
+    "_id": "678fe93b588e3286b009ee75",
+    "completion_status_name": "Completed",
+    "__v": 0
+  }
+]
+```
+
+### Create new completion status
+
+**GET** `/api/V0/completion_status/create_new_completion_status`
+
+**Request:**
+
+```json
+{
+  "completion_status_name": "Completed"
+}
+```
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
